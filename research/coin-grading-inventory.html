@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research companion — Coin Grading vs. Photo + Voice Inventory</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="hero narrow">
+  <p class="eyebrow">Research companion · Guide episode</p>
+  <h1>Coin Grading vs. Photo + Voice Inventory</h1>
+  <p class="sub">Two business ideas, head to head: Steve's venture using AI to grade coins by condition, and a photo-and-spoken-description tool for collection cataloging, estate and garage-sale pricing, and home inventories for insurance.</p>
+  <p><a href="../index.html">← Back to the podcast library</a> · <span class="note">The coin/inventory episode audio currently lives in the Library; this research companion is published here first.</span></p>
+</header>
+
+<main class="narrow">
+<section class="summary">
+  <h2>Executive summary — the one-pager</h2>
+  <ul>
+    <li><strong>Verdict:</strong> the inventory idea is the stronger solo-founder business. Coin grading is the more technically interesting but much harder business. The deciding question for any AI idea is: <em>who pays, for what proof, and what happens when the AI is wrong?</em></li>
+    <li><strong>Coin grading's problem is trust, not vision.</strong> PCGS (1986) and NGC (1987) dominate because they sell a guarantee and a slab the resale market accepts. An AI grade buyers will not pay for is a demo, not a product. The viable wedge is <em>pre-screening</em> — "should I pay to submit this coin?" — not a rival slab.</li>
+    <li><strong>Inventory's trust bar is lower.</strong> "Is this record complete and accurate?" is a much easier bar than "will the market pay a premium for this opinion?" A wrong value is corrected by a range, a confidence flag, and a human reviewer — and the core deliverable (photos + serials + receipts, stored off-site) still has value even if a price is off.</li>
+    <li><strong>Insurance is the deepest inventory application.</strong> Brokers are a pre-loss, renewal-time referral channel; the service flags valuables needing appraisal or additional coverage and supports future claims; paid annual updates create recurring revenue.</li>
+    <li><strong>California SB 495 is a real, verified floor — not a cap.</strong> In a declared-emergency total loss of a furnished primary dwelling, an insurer must offer at least 60% of the contents limit without an itemized list, capped at $350,000. An inventory is what lets a homeowner claim the rest, up to the full contents limit, with at least 100 days to prepare a detailed inventory.</li>
+    <li><strong>Two corrections supersede earlier claims:</strong> Encircle's consumer app shut down Dec 17, 2025 — only the pro contractor tool remains, so do not describe Encircle as free for homeowners. And the older "$200–$600 typical / $250–$1,500 premium" done-for-you price ranges were not independently verified; the only verifiable price found was MyInventoryAI at $699 for a half-day, roughly 150–250 items.</li>
+  </ul>
+</section>
+
+<h2>1. Idea 1 — AI coin grading (Steve's venture)</h2>
+<p><strong>How grading works:</strong> the Sheldon 1–70 scale (below 60 = circulated, 60–70 = Mint State). Graders weigh wear, luster, strike, surface marks, and eye appeal. Fees are roughly $17–$45 standard per coin, $50–$120 all-in, with weeks of turnaround and no refund for a disappointing grade.</p>
+<p><strong>Accuracy, honestly:</strong> a 2025 thesis reported 86.3% within ±1 step-grade and 96.4% within ±2 (US, straight-graded only). Vendor claims of 97–99% (Vardera) are unverified. Human grader agreement itself is cited second-hand at about 85–90% within 1 grade — the primary source was not verified.</p>
+<p><strong>The six hardest problems:</strong> lighting and luster (needs multi-angle/video); natural vs. artificial toning; cleaned vs. original surfaces (a "Details" grade, with a 50–80% value haircut); counterfeits (weight and edge are not visible in photos); weak strike vs. wear; varieties; and population-report "ghost" resubmissions.</p>
+<p><strong>Datasets ranked by leverage:</strong> (1) your own controlled-capture labelled set in <em>one</em> series, plus submission outcomes; (2) PCGS CoinFacts (Morgan population 3,938,702; 3.2M+ auction prices claimed); (3) Heritage auction prices realized; (4) population/condition census; (5) die-variety data; (6) negative examples (Details/counterfeit); (7) physical measurements.</p>
+<p><strong>Validation, in order:</strong> a 50–100 coin Morgan test vs. actual PCGS/NGC results; 10 dealer interviews; a data-licence check <em>before</em> model code. Kill criterion: if pre-screening accuracy does not beat the cost and friction of submitting, or dealers will not trust it as a filter, stop.</p>
+
+<h2>2. Idea 2 — Photos + spoken descriptions</h2>
+<p><strong>Workflow:</strong> capture (photo + voice) → identify → organize (serials, receipts) → value (range + confidence, never false precision) → human-reviewed, client-owned PDF/CSV stored off-site.</p>
+<h3>(a) Collection cataloging</h3>
+<p>Collectors and executors pay, value tracks the amount at stake, and Grant's guitar-documentation experience is real domain fit. Catalog sources include Numista API (free 2,000 requests/month; paid €100 activation + €100/month minimum; image €0.030/request; strict no-redistribution/caching terms), Discogs, Colnect, PriceCharting, and WorthPoint.</p>
+<h3>(b) Estate / garage-sale pricing</h3>
+<p>Event-driven urgency; price from sold comps, not a 10–30% retail rule. Competitors include ezFlipAI, ZaZooomIt, and Underpriced AI/SellRaze. An estate job (hundreds of items) is not a ~$20 garage app — do not price them the same.</p>
+<h3>(c) Home inventories for insurance — the deepest opportunity</h3>
+<p>Brokers refer homeowners at renewal, before a loss. The service documents possessions, flags sublimit and scheduling gaps (contents typically 50–70% of dwelling value; high-value sublimits around $1,500), and makes a future claim faster and more complete. Paid annual updates are the recurring revenue.</p>
+<div class="callout">
+<h3>California SB 495, worked examples</h3>
+<p>Insurance Code §10103.7, verified via the California Department of Insurance (Dec 30, 2025): furnished primary dwelling, declared-emergency total loss — insurer must offer <strong>at least 60% of the contents limit without an itemized list, capped at $350,000</strong>. The insured may recover additional amounts up to the full limit by filing a claim. Prior law was 30% / $250,000.</p>
+<ul>
+<li>$300,000 contents limit → $180,000 automatic, remaining $120,000 needs documentation</li>
+<li>$700,000 contents limit → 60% is $420,000, but the no-list payment is capped at $350,000</li>
+</ul>
+<p>Do not generalise beyond California, declared emergencies, and primary dwellings. Forms compliance was July 1, 2026.</p>
+</div>
+
+<h2>3. Competitors and the done-for-you wedge</h2>
+<p>Self-serve inventory apps exist, but the done-for-you wedge is different: a human-reviewed, finished record for people who hate doing the work, especially in wildfire country. <strong>Encircle correction:</strong> an Oct 2026 tracker citing Encircle's own help article says its consumer app shut down Dec 17, 2025 and only the pro contractor tool remains. Sell portability, and do not describe Encircle as free for homeowners with 150+ insurer partnerships.</p>
+<p><strong>Pricing correction:</strong> the only verifiable done-for-you price found was MyInventoryAI at $699 for a half-day, roughly 150–250 items, Gulf Coast. Treat older $200–$600 / $250–$1,500 ranges as unconfirmed until price-tested with real quotes.</p>
+<p><strong>eBay sold-data warning:</strong> the Finding API is dead (Feb 2025), Marketplace Insights is closed to new users, and the public sold filter has been behind login since Aug 2026 — build a swappable price layer, not a single-source dependency.</p>
+
+<h2>4. Guardrails — say these, they build trust</h2>
+<ul>
+<li><strong>Documentation only, not formal appraisal.</strong> A qualified appraiser (USPAP / ISA-ASA-AAA) does formal appraisal; never charge a percentage of value.</li>
+<li><strong>Not public adjusting.</strong> California Insurance Code 15007/15027 requires a licence, bond, and approved contract — do not negotiate or settle claims.</li>
+<li><strong>Referral compensation:</strong> default to <em>no</em> per-referral pay to brokers; flat, disclosed co-marketing only, pending counsel. California Insurance Code 750 criminalises referral consideration by claims processors/negotiators, up to a $50,000 fine.</li>
+<li><strong>Data security is the product.</strong> Encrypted, client-owned, portable — a leaked inventory is a burglar's shopping list.</li>
+<li><strong>Packages, if offered:</strong> refundable, clinically/contractually appropriate, and never a condition of care or coverage.</li>
+</ul>
+<p>This section is research, not legal advice — especially on appraisal, adjusting, and referral rules.</p>
+
+<h2>5. Head-to-head verdict and validation homework</h2>
+<table>
+<tr><th>Question</th><th>Coin grading</th><th>Inventory</th></tr>
+<tr><td>Who pays, for what proof?</td><td>Collectors/dealers, for a market-accepted opinion</td><td>Homeowners, collectors, executors, for a finished record</td></tr>
+<tr><td>What happens when AI is wrong?</td><td>Can cost thousands; incumbents' guarantee is the moat</td><td>Corrected by range, confidence, and human review</td></tr>
+<tr><td>Viable solo wedge?</td><td>Pre-screening: "should I submit?"</td><td>Done-for-you inventories, broker-referred, with annual updates</td></tr>
+<tr><td>First validation</td><td>50–100 coin Morgan test vs. PCGS/NGC; 10 dealer interviews</td><td>2–3 broker conversations + one paid pilot home</td></tr>
+</table>
+<p><strong>Inventory kill criteria:</strong> if brokers will not refer, or a paid pilot does not produce a record the homeowner and broker both trust, stop and rethink the channel before building software. <strong>Coin kill criteria:</strong> if pre-screening does not clearly beat submit-and-see, or no dealer trusts it as a filter, stop.</p>
+
+<h2>Caveats — say these plainly</h2>
+<ul>
+<li>Coin-grading market size estimates range from about $0.94bn (coin-only) to about $6.2bn (all collectibles auth + grading); no authoritative, audited figure was found. Do not quote a single number without its definition.</li>
+<li>Consumer-app grading claims (±2 points, 95%+, 99% identification) almost all originate with vendors; no independent, peer-reviewed benchmark across apps was found.</li>
+<li>PCGS/NGC fee snapshots conflict across secondary sources ($30 vs. $38 vs. $40 standard in different snapshots) — verify on pcgs.com and ngccoin.com on the day of use.</li>
+<li>California grouped-inventory and 100-day proof-of-loss rules in the full report are summarised from secondary claims guides — verify against the statute before quoting verbatim.</li>
+</ul>
+
+<h2>Key sources</h2>
+<ul class="sources">
+<li>PCGS CoinFacts statistics — pcgs.com/coinfacts/stats (verified live Nov 4, 2026)</li>
+<li>California Department of Insurance, SB 495 release (Dec 30, 2025) — insurance.ca.gov</li>
+<li>Numista API pricing and licence — en.numista.com/api/ (pricing verified live Nov 4, 2026)</li>
+<li>MyInventoryAI done-for-you pricing — myinventoryai.com</li>
+<li>AI grading research: NumisKing research paper; arXiv 2512.04464 (index)</li>
+<li>Full source list is in the research report for this episode; figures above are drawn from that report.</li>
+</ul>
+<p><a href="../index.html">← Back to the podcast library</a></p>
+</main>
+</body>
+</html>

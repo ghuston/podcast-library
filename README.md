@@ -37,5 +37,6 @@ No build step, no server, no database.
 - GitHub Pages on a free plan is public: anyone with the link can listen
   and download. There is no password gate on the free tier.
 - The corrected Grok Bots guide and the coin grading / inventory episode
-  currently live only as Library pages, so they are not in this first
-  GitHub version. Add them the same way once their audio is exported.
+  currently live only as Library pages, so their audio is not in this
+  GitHub version yet — but their research companions are, under `research/`.
+  Add their audio the same way once exported.

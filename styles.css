@@ -16,6 +16,18 @@ main { max-width: 900px; margin: 0 auto; padding: 8px 24px 40px; display: grid; 
 .card p { margin: 0 0 12px; color: #dde0f0; }
 .card audio { width: 100%; margin: 4px 0 10px; }
 .download { color: #ffb454; font-weight: 600; }
+.narrow { max-width: 760px; }
+.summary { background: #232844; border: 1px solid #ffb454; border-radius: 16px; padding: 22px 24px; margin: 8px 0 28px; }
+.summary h2 { margin-top: 0; }
+.callout { background: #1a2e22; border: 1px solid #4caf7d; border-radius: 12px; padding: 16px 20px; margin: 20px 0; }
+.callout h3 { margin-top: 0; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 15px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #2e3458; vertical-align: top; }
+th { color: #ffb454; }
+.sources { color: #aab0cc; font-size: 14px; }
+.companion-section { max-width: 900px; margin: 0 auto; padding: 8px 24px 24px; }
+.companion-section h2 { font-size: 26px; }
+.companion-link { color: #ffb454; font-weight: 700; }
 footer { max-width: 900px; margin: 0 auto; padding: 0 24px 48px; color: #aab0cc; }
 footer code { color: #fff; }
 .note { font-size: 14px; }

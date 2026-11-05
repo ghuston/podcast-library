@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research companion — Organizing Grok Bots as a Company Workforce</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="hero narrow">
+  <p class="eyebrow">Research companion · Guide episode</p>
+  <h1>Organizing Grok Bots as a Company Workforce</h1>
+  <p class="sub">How a solo founder runs a team of Grok Bots like a company — without burning usage, and without letting a Bot drive your code editor by screenshots.</p>
+  <p><a href="../index.html">← Back to the podcast library</a> · <span class="note">The corrected Grok Bots episode audio currently lives in the Library; this research companion is published here first.</span></p>
+</header>
+
+<main class="narrow">
+<section class="summary">
+  <h2>Executive summary — the one-pager</h2>
+  <ul>
+    <li><strong>What a Grok Bot is:</strong> a named, persistent AI teammate sharing <em>one</em> cloud computer per account (browser, filesystem, terminal), with memory and files between tasks, working while your laptop is closed. You create it by message, not by building a workflow. There is no model picker — that is a feature of the product, not a gap in this guide.</li>
+    <li><strong>The company shape that works:</strong> one Chief of Staff as your single front door, specialists that each own <em>one</em> stable job, and handoffs through <em>files</em>, not through Bots chatting to each other. Group chats are the exception, for a live handoff or a disagreement you need to watch — not the default way work moves.</li>
+    <li><strong>The usage truth:</strong> usage is metered by agent steps + tokens, <em>not</em> by messages. Every Bot reply, routine run, and bot-to-bot message costs, and every reply re-reads the whole conversation. Long chats, frequent routines, and chatty groups are the three leaks.</li>
+    <li><strong>There is no per-Bot meter.</strong> Measure a Bot by testing it alone and watching the whole-account meter before and after. Do not claim a per-Bot usage split the app does not provide.</li>
+    <li><strong>The coding trap:</strong> do not have a Bot drive Cursor by screenshots, and do not keep a Bot supervising a coding job in chat. The proper Bot route is a short, written spec handed to a Cursor Cloud Agent, which returns a branch/PR for <em>you</em> to review in Cursor. If you can already describe the change precisely, skip the Bot entirely.</li>
+    <li><strong>Three pipelines, not one blob:</strong> researching ideas, running marketing, and building apps have different evidence and different gates. Do not let one Bot do all three, and do not let a research Bot's enthusiasm substitute for customer evidence.</li>
+  </ul>
+  <p class="note">Based on official Grok Bot documentation dated Oct 28, 2026, read Nov 3, 2026, plus practitioner and forum sources labelled as such below. In-app labels and plan screens may have moved since — verify in the app before acting on a UI step. This guide deliberately contains no model-selection or pricing tables: usage conservation is the only cost topic, as requested.</p>
+</section>
+
+<h2>1. What Grok Bots actually are</h2>
+<p>A Bot is not a chat. It is a persistent teammate with a job, memory, files, and a screen on a shared cloud computer. Boundaries live in chat instructions, skills, routines, and Auto Review rules — not in a settings field. Secrets live in the Vault, which is account-wide and <strong>cannot be limited to one Bot</strong> — do not try to separate secrets by Bot, because you cannot.</p>
+<p>Skills and routines are the two repeatability tools. A routine is one Bot + a schedule or event, with limits reported as 50 per Bot, at least 5 minutes apart, and 300 runs per hour total / 200 per hour per routine. Design routines to end at drafts, because approval gates expire (see below).</p>
+
+<h2>2. Group chats — use sparingly, by design</h2>
+<ul>
+<li><strong>Size:</strong> 2–6 Bots in a group. Mention (@) a single owner per stage; use @everyone sparingly.</li>
+<li><strong>Hard limits to design around:</strong> approvals, secret/login requests, and email/Slack drafts do <em>not</em> appear in groups; bot-to-group handoffs are text-only; voice chat is 1-to-1 only; every Bot reply counts toward usage.</li>
+<li><strong>Default:</strong> files for handoffs; groups only for a live handoff or a disagreement to watch. A group chat that becomes the default workflow becomes a usage leak and a quality leak at the same time.</li>
+</ul>
+
+<h2>3. The org chart (solo founder edition)</h2>
+<table>
+<tr><th>Bot</th><th>Job</th><th>Approval rule</th></tr>
+<tr><td>Chief of Staff</td><td>Single front door; daily brief, max 5 needs-you items</td><td>You approve sends, spends, publishes, merges</td></tr>
+<tr><td>Researcher</td><td>Business-idea and market research, with sources</td><td>Evidence, not enthusiasm — no decision by itself</td></tr>
+<tr><td>Writer / Content</td><td>Drafts for review</td><td>Never publishes without approval</td></tr>
+<tr><td>Ops / Admin</td><td>Admin, scheduling, and process work</td><td>Drafts only; no payments or access grants</td></tr>
+<tr><td>Outreach / Sales Research</td><td>Find and qualify prospects</td><td>Never sends outreach without approval</td></tr>
+<tr><td>Finance / Bookkeeping</td><td>Read-only reporting and reconciliation prep</td><td>Read-only; never pays</td></tr>
+<tr><td>Reviewer / QA</td><td>Independent check before anything goes out</td><td>Blocks, does not fix silently</td></tr>
+<tr><td>Coder</td><td>Last, only when a repo and a real ticket exist</td><td>Returns a branch/PR; you review the diff, not the story</td></tr>
+</table>
+<p><strong>Authority split, always:</strong> interpretation ≠ proposal ≠ execution ≠ spending. Grant alone decides spending, sending, publishing, merging, and granting access.</p>
+
+<h2>4. The pipeline every job follows</h2>
+<p><strong>Intake → Triage → Work → Review → Approval → only then send / publish / pay / merge.</strong> Routines should be narrow and slow, one dedicated routine Bot per job, and should end at drafts. Unattended approval expiry is reported as about 10 minutes in docs-citing sources vs. 30 minutes in one Cursor help source — design for 10 minutes, so nothing important waits on an unattended approval.</p>
+<p><strong>Week 1, in order:</strong> (1) Chief of Staff, (2) Researcher, (3) Writer — with paste-ready first-message role descriptions in the full report, and first routines only after two clean manual runs. <strong>Weeks 2–4:</strong> one new Bot at a time, each only after three clean runs with no boundary miss. Coder only in week 4, when a repo and a real ticket exist.</p>
+
+<h2>5. Usage conservation — the only cost topic</h2>
+<p><strong>How usage is metered:</strong> agent steps + tokens, in a shared weekly pool on the X Subscription (from Oct 12, 2026) covering Grok Bot + Cursor + Grok apps. Exact pool sizes are not published; third-party reports of tier multiples (Premium 4×, Super 15×, Ultra 50×) were <em>not</em> re-verified — check the current plan page before paying.</p>
+<p><strong>Fastest burns, in order:</strong> long chats (every reply re-reads the whole conversation); frequent or broad routines; chatty groups and bot-to-bot debate; vague, unbounded jobs; browser use where a connector exists.</p>
+<p><strong>Tactics that work:</strong> fresh chat per task; handoff summaries instead of endless threads; slow, narrow routines; one dedicated routine Bot per job; batching; capped scope; connectors before browser; pause or retire dead Bots; log the meter % before and after a job. To measure a Bot, isolate it: run it alone and compare the whole-account meter before and after.</p>
+<p><strong>What not to do in week one:</strong> do not launch five Bots at once, do not put every job in a group chat, do not set frequent routines before manual runs are clean, and do not let a Bot hold a job in chat while you wait on an approval that will expire.</p>
+
+<h2>6. Building apps: the Cursor trap, in full</h2>
+<table>
+<tr><th>Route</th><th>What it is</th><th>When to use it</th></tr>
+<tr><td>A. Bot drives Cursor by screenshots</td><td>Worst route: screenshot loop + chat re-read, no diff review</td><td>Never as a working method</td></tr>
+<tr><td>B. Bot supervises a Cursor Cloud Agent</td><td>Proper Bot route: returns a branch/PR, but costs Bot turns <em>plus</em> Cloud Agent turns ("a cloud agent is always Cursor usage")</td><td>When a job starts outside the repo (customer report, research → spec, repro pack) or for async overnight staging</td></tr>
+<tr><td>C. Cursor directly</td><td>Cursor usage only, full diff/CI/merge review</td><td>When the change is precisely describable, in an iterative diff loop, for auth/payments/data/infra/prod, or when short on usage</td></tr>
+</table>
+<p><strong>Avoid-trap procedure:</strong> spec file first → one ticket, one branch, one PR → Bot goes quiet after handoff → review the diff, not the story → merge only green, small, and confident.</p>
+
+<h2>7. Shared workspace discipline</h2>
+<ul>
+<li>One owner per file. The file is the record; a message is a nudge.</li>
+<li>Memory and handoffs between Bots go through files and summaries, not through re-telling a long chat.</li>
+<li>Secrets: Vault is account-wide. Never put a secret in a Bot-specific instruction expecting it to stay private to that Bot.</li>
+<li>Errors: stop, record what happened, and hand back to the owner — do not let a Bot retry its way through a permissions or payment failure.</li>
+</ul>
+
+<h2>Caveats — say these plainly</h2>
+<ul>
+<li>Exact weekly pool sizes, X Subscription prices ($30/$100/$200, Plus $8), and the 50-Bot + group-chat combined cap are third-party reports, not directly re-verified against x.ai/pricing in this research. Check at purchase time; prices changed Oct 12, 2026 and older guides are stale.</li>
+<li>Legacy vs. X billing: August–September forum threads describe the older separate-pool regime; the Oct 12, 2026 X Subscription merged the pool for new customers. Check which regime the account is actually on.</li>
+<li>Computer-use cost multiples (30–50× vs. structured API) are general literature, not a Grok-measured figure.</li>
+<li>No live-app verification was done; official claims come from docs text fetched Nov 3, 2026.</li>
+</ul>
+
+<h2>Key sources</h2>
+<ul class="sources">
+<li>Official Grok Bot docs (Oct 28, 2026): overview, get-started, bots, chat-and-collaboration, skills-routines-and-automations, security — docs.x.ai/grok-bot/</li>
+<li>Cursor help: Grok Bot plans; Grok Bot secrets — cursor.com/help/grok-bot/</li>
+<li>Official guides: Grok Bot for marketing; Grok Bot for founder-led sales — x.ai/bot/guides/</li>
+<li>Practitioner / forum (labelled, not official): learngrokbot.com usage notes; Cursor forum threads on Grok Bot spend and Cloud Agents; shipkits.dev handoff patterns; grok-bots.com usage summaries (third-party, Oct 2026).</li>
+</ul>
+<p><a href="../index.html">← Back to the podcast library</a></p>
+</main>
+</body>
+</html>
