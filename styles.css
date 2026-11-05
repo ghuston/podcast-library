@@ -1,0 +1,22 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: #0f1220; color: #f2f3f8; line-height: 1.5; }
+.hero { padding: 48px 24px 24px; max-width: 900px; margin: 0 auto; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: 12px; color: #ffb454; margin: 0 0 8px; }
+h1 { font-size: 44px; line-height: 1.1; margin: 0 0 12px; }
+.sub { font-size: 18px; color: #c9cde0; max-width: 680px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.filters button { background: #232844; color: #fff; border: 1px solid #3a4066; border-radius: 999px; padding: 8px 14px; cursor: pointer; }
+.filters button.active { background: #ffb454; color: #1a1c2e; border-color: #ffb454; font-weight: 700; }
+.filters input { flex: 1 1 220px; background: #1a1e33; color: #fff; border: 1px solid #3a4066; border-radius: 999px; padding: 8px 14px; }
+main { max-width: 900px; margin: 0 auto; padding: 8px 24px 40px; display: grid; gap: 16px; }
+.card { background: #1a1e33; border: 1px solid #2e3458; border-radius: 16px; padding: 20px 22px; }
+.card .series { color: #ffb454; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin: 0 0 6px; }
+.card h2 { margin: 0 0 6px; font-size: 22px; line-height: 1.25; }
+.card .meta { color: #aab0cc; margin: 0 0 10px; }
+.card p { margin: 0 0 12px; color: #dde0f0; }
+.card audio { width: 100%; margin: 4px 0 10px; }
+.download { color: #ffb454; font-weight: 600; }
+footer { max-width: 900px; margin: 0 auto; padding: 0 24px 48px; color: #aab0cc; }
+footer code { color: #fff; }
+.note { font-size: 14px; }
+@media (max-width: 600px) { h1 { font-size: 32px; } .hero { padding-top: 32px; } }

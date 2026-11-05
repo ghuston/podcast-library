@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grant's Podcast Library</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <p class="eyebrow">A private little podcast shelf, for Grant</p>
+  <h1>Grant's Podcast Library</h1>
+  <p class="sub">AI news, business guides, and narrated plans — all in one place, newest first. Press play right here, or download an episode to listen offline.</p>
+  <div class="filters">
+    <button data-filter="all" class="active">All episodes</button>
+    <button data-filter="ai-download">The AI Download</button>
+    <button data-filter="guides">Guides &amp; narrations</button>
+    <input id="search" type="search" placeholder="Search episodes…" aria-label="Search episodes">
+  </div>
+</header>
+
+<main id="episodes">
+
+  <article class="card" data-series="guides">
+    <p class="series">Guides &amp; narrations</p>
+    <h2>How Health and Wellness Practices Make Money</h2>
+    <p class="meta">Nov 4, 2026 · 14 min 56 sec · Single narrator</p>
+    <p>Understand a 3–15 clinician practice's money better than the owner does: the inquiry-to-collected funnel, payer mix, profit per clinician, lead follow-up, marketing ranked by profit per retained client, and the real SimplePractice gaps.</p>
+    <audio controls preload="none" src="episodes/health-wellness-practices-make-money.mp3"></audio>
+    <a class="download" href="episodes/health-wellness-practices-make-money.mp3" download>Download MP3</a>
+  </article>
+
+  <article class="card" data-series="guides">
+    <p class="series">Guides &amp; narrations</p>
+    <h2>Your First 30 Days: From Consulting to a Real Business</h2>
+    <p class="meta">Nov 4, 2026 · 12 min 50 sec · Single narrator</p>
+    <p>A practical plan for converting existing expertise into early revenue and discovering a product idea worth building — without accidentally recreating the job you just quit.</p>
+    <audio controls preload="none" src="episodes/first-30-days.mp3"></audio>
+    <a class="download" href="episodes/first-30-days.mp3" download>Download MP3</a>
+  </article>
+
+  <article class="card" data-series="ai-download">
+    <p class="series">The AI Download · Episode 4</p>
+    <h2>Cheaper Hands, Gated Brains, and a Trillion-Dollar Filing</h2>
+    <p class="meta">Nov 1, 2026 · 5 min 15 sec · Alex &amp; Sam</p>
+    <p>Cheaper computer use, gated rollouts, a trillion-dollar filing, and the roundup of what else moved in AI since the last episode.</p>
+    <audio controls preload="none" src="episodes/ep4-cheaper-hands.mp3"></audio>
+    <a class="download" href="episodes/ep4-cheaper-hands.mp3" download>Download MP3</a>
+  </article>
+
+  <article class="card" data-series="ai-download">
+    <p class="series">The AI Download · Episode 3</p>
+    <h2>Agents That Act First</h2>
+    <p class="meta">Oct 25, 2026 · 4 min 3 sec · Alex &amp; Sam</p>
+    <p>Proactive agents, agentic shopping, portable models, and a brief guardrails roundup.</p>
+    <audio controls preload="none" src="episodes/ep3-agents-that-act-first.mp3"></audio>
+    <a class="download" href="episodes/ep3-agents-that-act-first.mp3" download>Download MP3</a>
+  </article>
+
+  <article class="card" data-series="ai-download">
+    <p class="series">The AI Download · Episode 2</p>
+    <h2>Deep Dive: The Robot Front Desk</h2>
+    <p class="meta">Oct 21, 2026 · 5 min 36 sec · Alex &amp; Sam</p>
+    <p>AI receptionists for small service businesses: the missed-call problem, what the tools can actually do, and where a CRM and workflow edge comes from.</p>
+    <audio controls preload="none" src="episodes/ep2-robot-front-desk.mp3"></audio>
+    <a class="download" href="episodes/ep2-robot-front-desk.mp3" download>Download MP3</a>
+  </article>
+
+  <article class="card" data-series="ai-download">
+    <p class="series">The AI Download · Episode 1</p>
+    <h2>Cheaper Models, Tireless Agents, Real Consequences</h2>
+    <p class="meta">Oct 21, 2026 · 5 min 10 sec · Alex &amp; Sam</p>
+    <p>The fall 2026 model race, the agent shift, and the safety and governance stories that actually mattered.</p>
+    <audio controls preload="none" src="episodes/ep1-cheaper-models.mp3"></audio>
+    <a class="download" href="episodes/ep1-cheaper-models.mp3" download>Download MP3</a>
+  </article>
+
+</main>
+
+<footer>
+  <p>To add an episode: drop its MP3 into <code>episodes/</code>, copy a card above, and change the title, date, runtime, and file name. That's it — no build step.</p>
+  <p class="note">Note: the corrected Grok Bots guide and the coin grading / inventory episode currently live only as Library pages, so they aren't in this first GitHub version yet. Their audio can be added the same way once exported.</p>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll('[data-filter]');
+const cards = document.querySelectorAll('.card');
+const search = document.getElementById('search');
+let active = 'all';
+function apply() {
+  const q = search.value.trim().toLowerCase();
+  cards.forEach(c => {
+    const matchSeries = active === 'all' || c.dataset.series === active;
+    const matchText = !q || c.textContent.toLowerCase().includes(q);
+    c.style.display = (matchSeries && matchText) ? '' : 'none';
+  });
+}
+buttons.forEach(b => b.addEventListener('click', () => {
+  buttons.forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  active = b.dataset.filter;
+  apply();
+}));
+search.addEventListener('input', apply);
+// Only one episode playing at a time.
+document.querySelectorAll('audio').forEach(a => {
+  a.addEventListener('play', () => {
+    document.querySelectorAll('audio').forEach(o => { if (o !== a) o.pause(); });
+  });
+});
+</script>
+</body>
+</html>
