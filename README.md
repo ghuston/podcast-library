@@ -33,7 +33,7 @@ No build step, no server, no database.
 
 ## Notes
 
-- Total site size here is about 22 MB, well under GitHub Pages' 1 GB site limit.
+- Total site size here is about 27 MB, well under GitHub Pages' 1 GB site limit.
 - GitHub Pages on a free plan is public: anyone with the link can listen
   and download. There is no password gate on the free tier.
 - The corrected Grok Bots guide and the coin grading / inventory episode
